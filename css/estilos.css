@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f2; color: #21392f; }
+main { width: min(900px, 100% - 36px); margin: 48px auto; }
+.icono { display: grid; place-items: center; background: #d9edbe; width: 48px; height: 48px; border-radius: 15px; font-weight: 800; font-size: 26px; }
+.etiqueta { font-size: 11px; letter-spacing: 2px; font-weight: 750; }
+header .etiqueta { color: #52684a; margin-top: 24px; }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; letter-spacing: -1px; margin: 12px 0; }
+header > p:last-child { color: #5a6b60; line-height: 1.6; }
+.calculadora { display: grid; grid-template-columns: 1fr 1fr; background: white; border: 1px solid #dce3d8; border-radius: 22px; overflow: hidden; margin-top: 28px; }
+.datos, .resultado { padding: 32px; min-width: 0; }
+h2 { font-size: 20px; margin: 0 0 26px; }
+label { display: block; font-size: 14px; font-weight: 650; margin: 20px 0 10px; }
+input, select { display: block; width: 100%; min-height: 48px; padding: 12px; border: 1px solid #9fac9e; border-radius: 9px; font: inherit; color: #21392f; background: white; }
+:focus-visible { outline: 3px solid #90ae60; outline-offset: 3px; }
+.ayuda { font-size: 12px; line-height: 1.5; color: #61705f; }
+#mensaje { font-size: 13px; line-height: 1.5; min-height: 40px; color: #784025; margin-top: 20px; }
+button { font: inherit; font-size: 14px; font-weight: 650; padding: 12px 18px; background: #eef4e7; color: #2b4c37; border: 1px solid #c1d3b0; border-radius: 9px; cursor: pointer; }
+button:hover { background: #e1edce; }
+.resultado { background: #193f32; color: #f4f8ee; }
+.resultado .etiqueta { color: #c1db9f; margin: 4px 0 14px; }
+dL { margin-top: 38px; }
+dl > div { display: flex; justify-content: space-between; gap: 14px; padding: 15px 0; }
+dt { color: #d4e1d8; font-size: 14px; }
+dd { margin: 0; font-weight: 650; overflow-wrap: anywhere; text-align: right; }
+dl .total { display: block; border-top: 1px solid #517161; margin-top: 22px; padding-top: 26px; }
+.total dd { text-align: left; font-size: clamp(25px, 3.8vw, 36px); color: #d3eea6; margin-top: 10px; }
+.nota { font-size: 12px; line-height: 1.8; color: #cfdbd1; margin-top: 30px; }
+footer { text-align: center; color: #61705f; font-size: 12px; margin-top: 24px; }
+@media (max-width: 640px) { main { margin: 28px auto; } .calculadora { grid-template-columns: 1fr; } .datos, .resultado { padding: 24px; } }

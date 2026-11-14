@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de propinas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script defer src="js/modelo.js"></script>
+  <script defer src="js/vista.js"></script>
+  <script defer src="js/controlador.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="icono" aria-hidden="true">%</span>
+      <p class="etiqueta">CUENTAS CLARAS</p>
+      <h1>Calculadora de propinas</h1>
+      <p>Ingresa tu cuenta y elige cuánto deseas dejar.</p>
+    </header>
+    <div class="calculadora">
+      <section class="datos" aria-labelledby="titulo-datos">
+        <h2 id="titulo-datos">Tu cuenta</h2>
+        <form id="formulario" novalidate>
+          <label for="monto">Valor de la cuenta (COP)</label>
+          <input id="monto" type="number" min="0" max="1000000000" step="0.01" inputmode="decimal" placeholder="Ej.: 50000" aria-describedby="ayuda-monto mensaje">
+          <p id="ayuda-monto" class="ayuda">Escribe el valor sin separadores de miles.</p>
+          <label for="porcentaje">Porcentaje de propina</label>
+          <select id="porcentaje">
+            <option value="0">0 % — Sin propina</option>
+            <option value="5">5 %</option>
+            <option value="10" selected>10 %</option>
+            <option value="15">15 %</option>
+            <option value="20">20 %</option>
+            <option value="otro">Otro porcentaje</option>
+          </select>
+          <div id="campo-personalizado" hidden>
+            <label for="personalizado">Tu porcentaje (%)</label>
+            <input id="personalizado" type="number" min="0" max="100" step="0.01" inputmode="decimal" placeholder="Ej.: 12.5" aria-describedby="mensaje">
+          </div>
+          <p id="mensaje" role="status"></p>
+          <button id="limpiar" type="button">Limpiar valores</button>
+        </form>
+      </section>
+      <section class="resultado" aria-labelledby="titulo-resultado" aria-live="polite" aria-atomic="true">
+        <p class="etiqueta">RESUMEN</p>
+        <h2 id="titulo-resultado">Así queda tu cuenta</h2>
+        <dl>
+          <div><dt>Cuenta</dt><dd id="base">—</dd></div>
+          <div><dt>Propina <span id="tasa"></span></dt><dd id="propina">—</dd></div>
+          <div class="total"><dt>Total a pagar</dt><dd id="total">—</dd></div>
+        </dl>
+        <p class="nota">Valores en pesos colombianos (COP).<br>El resultado se actualiza mientras escribes.</p>
+      </section>
+    </div>
+    <footer>Tú eliges el porcentaje · Cálculo automático</footer>
+  </main>
+</body>
+</html>
